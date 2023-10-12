@@ -36,7 +36,10 @@ const Auth = () => {
         <Link href="/add-todo">Add To Do</Link>
       </Box>
       <Box>
-        <Link href="/">List All To Dos</Link>
+        <Link href="/add-event">Add Event</Link>
+      </Box>
+      <Box>
+        <Link href="/">My Planner</Link>
       </Box>
       <Box textAlign="right">
         <Button onClick={() => toggleColorMode()}>
