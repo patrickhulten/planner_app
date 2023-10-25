@@ -39,6 +39,9 @@ const Auth = () => {
         <Link href="/add-event">Add Event</Link>
       </Box>
       <Box>
+        <Link href="/add-contact">Add Contact</Link>
+      </Box>
+      <Box>
         <Link href="/">My Planner</Link>
       </Box>
       <Box textAlign="right">
