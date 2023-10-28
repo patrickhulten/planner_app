@@ -1,5 +1,19 @@
 import React from "react";
-import { Box, Button, Link, Text, useColorMode } from "@chakra-ui/react";
+import {
+  Box,
+  Button,
+  Link,
+  Text,
+  useColorMode,
+  Menu,
+  MenuButton,
+  MenuList,
+  MenuItem,
+  MenuItemOption,
+  MenuGroup,
+  MenuOptionGroup,
+  MenuDivider,
+} from "@chakra-ui/react";
 import { signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 import { FaGoogle, FaMoon, FaSun } from "react-icons/fa";
 import { auth } from "../firebase";
@@ -31,18 +45,23 @@ const Auth = () => {
       });
   };
   return (
-    <Box display="flex" alignItems="center" justifyContent="space-between">
-      <Box>
-        <Link href="/add-todo">Add To Do</Link>
-      </Box>
-      <Box>
-        <Link href="/add-event">Add Event</Link>
-      </Box>
-      <Box>
-        <Link href="/add-contact">Add Contact</Link>
-      </Box>
-      <Box>
-        <Link href="/">My Planner</Link>
+    <div>
+      <Menu>
+        <MenuButton>Add Items!</MenuButton>
+        <MenuList>
+          <MenuItem as="a" href="/add-event">
+            Add Event
+          </MenuItem>
+          <MenuItem as="a" href="/add-todo">
+            Add Todo
+          </MenuItem>
+          <MenuItem as="a" href="/add-contact">
+            Add Contact
+          </MenuItem>
+        </MenuList>
+      </Menu>
+      <Box textAlign="center">
+        <Link href="/">Home</Link>
       </Box>
       <Box textAlign="right">
         <Button onClick={() => toggleColorMode()}>
@@ -62,7 +81,7 @@ const Auth = () => {
           </Button>
         )}
       </Box>
-    </Box>
+    </div>
   );
 };
 export default Auth;
